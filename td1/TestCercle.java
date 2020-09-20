@@ -9,9 +9,9 @@ class TestCercle {
     Point c2 = new Point(300,400);
     Point c3 = new Point(900,450);
 
-    Cercle cercle1 = new Cercle(c1,80);
-    Cercle cercle2 = new Cercle(c2,130);
-    Cercle cercle3 = new Cercle(c3,300);
+    Cercle cercle1 = new Cercle(c1,80,12,250,56);
+    Cercle cercle2 = new Cercle(c2,130,50,180,180);
+    Cercle cercle3 = new Cercle(c3,300,0,15,80);
 
     System.out.println("cercle1 : " + cercle1.surface() + " cercle2 : " + cercle2.surface() + " cercle3 : " + cercle3.surface());
 

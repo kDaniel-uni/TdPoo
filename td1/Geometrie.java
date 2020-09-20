@@ -24,7 +24,7 @@ class Geometrie {
 
     }
 
-    Triangle tri = new Triangle(tab[0],tab[1],tab[2]);
+    Triangle tri = new Triangle(tab[0],tab[1],tab[2],40,250,6);
 
     System.out.println("Permietre du triangle : " + tri.perimetre());
     System.out.println("Isocele : " + tri.estIsocele());
