@@ -20,4 +20,8 @@ class Cercle {
     }
   }
 
+  String svg(){
+    return "<circle cx='" + centre.getx() +"' cy='" + centre.gety() + "' r='" + rayon + "' />";
+  }
+
 }

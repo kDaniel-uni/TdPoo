@@ -8,6 +8,14 @@ class Point {
     this.y = y;
   }
 
+  double getx(){
+    return x;
+  }
+
+  double gety(){
+    return y;
+  }
+
   void afficher(){
     System.out.println("x : " + x + " , y : " + y);
   }

@@ -8,6 +8,7 @@ class Triangle {
     this.p1 = p1;
     this.p2 = p2;
     this.p3 = p3;
+
   }
 
   double perimetre(){
@@ -15,7 +16,15 @@ class Triangle {
   }
 
   boolean estIsocele(){
-    if
+    if ((p1.distance(p2) == p2.distance(p3)) || (p2.distance(p3) == p3.distance(p1)) || (p3.distance(p1) == p1.distance(p2))){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  String svg(){
+    return ("<polygon points='" + p1.getx() + " " + p1.gety() + ", " + p2.getx() + " " + p2.gety() + ", " + p3.getx() + " " + p3.gety() + "'/>");
   }
 
 }
