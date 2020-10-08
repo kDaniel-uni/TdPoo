@@ -1,3 +1,4 @@
+package shape;
 public class AxesAlignedRectangle extends Shape2D{
 
   private Point2D upperLeft;
@@ -5,11 +6,12 @@ public class AxesAlignedRectangle extends Shape2D{
   private Point2D lowerRight;
   private Point2D lowerLeft;
 
-  public AxesAlignedRectangle(Point2D ul, double distX, double distY){
+  public AxesAlignedRectangle(Point2D ul, double distX, double distY, String name){
     upperLeft = ul;
-    upperRight = new Point2D(upperLeft.getX() + distX,upperLeft.getY());
-    lowerRight = new Point2D(upperLeft.getX() + distX,upperLeft.getY() - distY);
-    lowerLeft = new Point2D(upperLeft.getX(),upperLeft.getY() - distY);
+    upperRight = new Point2D(upperLeft.getX() + distX, upperLeft.getY(), "upperRight");
+    lowerRight = new Point2D(upperLeft.getX() + distX, upperLeft.getY() - distY, "lowerRight");
+    lowerLeft = new Point2D(upperLeft.getX(),upperLeft.getY() - distY, "lowerLeft");
+    this.name = name;
   }
 
   public double area() {
@@ -28,6 +30,6 @@ public class AxesAlignedRectangle extends Shape2D{
   }
 
   public String toString() {
-    return "AxesAlignedRectangle : (" + upperLeft + ", " + upperRight + ", " + lowerRight + ", " + lowerLeft + ")";
+    return name + " : (" + upperLeft + ", " + upperRight + ", " + lowerRight + ", " + lowerLeft + ")";
   }
 }

@@ -12,5 +12,11 @@ public class TestShape2D {
 
         Triangle t1 = new Triangle(p1,p2,p3);
         System.out.println(t1);
+
+        AxesAlignedRectangle r1 = new AxesAlignedRectangle(p1,5,8);
+        System.out.println(r1);
+
+        AxesAlignedSquare s1 = new AxesAlignedSquare(p1,9);
+        System.out.println(s1);
     }
 }
