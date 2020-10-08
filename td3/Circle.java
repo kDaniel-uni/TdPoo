@@ -20,8 +20,8 @@ public class Circle extends Shape2D {
     center.translate(dx,dy);
   }
 
-  public void print() {
-    System.out.println("Circle") ;
+  public String toString() {
+    return "Circle : (" + center + ", " + radius + ")";
   }
 
   public boolean pointIsInside(Point2D p){

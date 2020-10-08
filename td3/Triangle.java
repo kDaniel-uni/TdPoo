@@ -19,9 +19,9 @@ public class Triangle extends Shape2D{
     return p1.distance(p2)+p2.distance(p3)+p3.distance(p1);
   }
 
-  public boolean isIsoceles(){
+  /*public boolean isIsoceles(){
     if
-  }
+  }*/
 
   public void translate(double dx, double dy) {
     p1.translate(dx,dy);
@@ -29,16 +29,16 @@ public class Triangle extends Shape2D{
     p3.translate(dx,dy);
   }
 
-  public void print() {
-      System.out.println("Triangle");
+  public String toString() {
+      return "Triangle : (" + p1 + ", " + p2 + ", " + p3 + ")";
   }
 
-  public boolean pointIsInside(Point2D p){
+  /*public boolean pointIsInside(Point2D p){
     if (center.distance(p) < radius){
       return true;
     }else{
       return false;
     }
-  }
+  }*/
 
 }

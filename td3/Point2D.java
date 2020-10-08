@@ -31,8 +31,8 @@ public class Point2D extends Shape2D {
         y = y + dy;
     }
 
-    public void print() {
-        System.out.println( "Point2D (" + x + ", "  + y + ")");
+    public String toString() {
+        return "Point2D : (" + x + ", "  + y + ")";
     }
 
     public double distance(Point2D p){
