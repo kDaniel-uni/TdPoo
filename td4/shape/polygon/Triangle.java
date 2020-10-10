@@ -1,5 +1,9 @@
-package shape;
-public class Triangle extends Shape2D{
+package shape.polygon;
+
+import shape.Shape2D;
+import shape.point.Point2D;
+
+public class Triangle extends Shape2D {
 
   private Point2D p1;
   private Point2D p2;

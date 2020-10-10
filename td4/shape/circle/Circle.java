@@ -1,4 +1,8 @@
-package shape;
+package shape.circle;
+
+import shape.Shape2D;
+import shape.point.Point2D;
+
 public class Circle extends Shape2D {
 
   private Point2D center;
@@ -27,10 +31,6 @@ public class Circle extends Shape2D {
   }
 
   public boolean pointIsInside(Point2D p){
-    if (center.distance(p) < radius){
-      return true;
-    }else{
-      return false;
-    }
+    return center.distance(p) < radius;
   }
 }

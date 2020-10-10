@@ -1,4 +1,7 @@
-package shape;
+package shape.point;
+
+import shape.Shape2D;
+
 public class Point2D extends Shape2D {
     double x, y;
 
@@ -35,6 +38,16 @@ public class Point2D extends Shape2D {
 
     public String toString() {
         return name + " : (" + x + ", "  + y + ")";
+    }
+
+    public boolean equals(Object o){
+        if (o == null){return false;}
+        if (o instanceof Point2D) {
+            Point2D p = (Point2D)o;
+            return (this.x == p.x) && (this.y == p.y);
+        }  else {
+            return false;
+        }
     }
 
     public double distance(Point2D p){

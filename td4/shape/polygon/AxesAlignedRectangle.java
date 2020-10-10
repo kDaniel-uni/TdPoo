@@ -1,4 +1,8 @@
-package shape;
+package shape.polygon;
+
+import shape.Shape2D;
+import shape.point.Point2D;
+
 public class AxesAlignedRectangle extends Shape2D{
 
   private Point2D upperLeft;

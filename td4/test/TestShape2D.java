@@ -1,8 +1,14 @@
 package test;
-import shape.*;
+
+import shape.circle.Circle;
+import shape.point.Point2D;
+import shape.polygon.AxesAlignedRectangle;
+import shape.polygon.AxesAlignedSquare;
+import shape.polygon.Triangle;
+
 public class TestShape2D {
     public static void main(String[] args) {
-        Point2D  p1 = new Point2D(1, 2, "p1");
+        Point2D p1 = new Point2D(1, 2, "p1");
         System.out.println(p1);
         p1.translate(5);
         System.out.println(p1);
@@ -20,6 +26,13 @@ public class TestShape2D {
 
         AxesAlignedSquare s1 = new AxesAlignedSquare(p1,9,"s1");
         System.out.println(s1);
+
+        Point2D D = new Point2D(1.0, 1.0, "D");
+        Point2D E = new Point2D(1.0, 1.0, "E");
+        if (D.equals(E)) {
+            System.out.println("Les points sont égaux");
+        }
+
 
     }
 }
