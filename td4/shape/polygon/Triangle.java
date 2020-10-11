@@ -1,5 +1,7 @@
 package shape.polygon;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Shape;
 import shape.Shape2D;
 import shape.point.Point2D;
 
@@ -9,11 +11,20 @@ public class Triangle extends Shape2D {
   private Point2D p2;
   private Point2D p3;
 
+  public Triangle(Point2D p1, Point2D p2, Point2D p3, String name, Color col){
+    this.p1 = p1;
+    this.p2 = p2;
+    this.p3 = p3;
+    this.name = name;
+    this.col = col;
+  }
+
   public Triangle(Point2D p1, Point2D p2, Point2D p3, String name){
     this.p1 = p1;
     this.p2 = p2;
     this.p3 = p3;
     this.name = name;
+    this.col = Color.BLACK;
   }
 
   public double area() {
@@ -37,6 +48,15 @@ public class Triangle extends Shape2D {
 
   public String toString() {
       return name + " : (" + p1 + ", " + p2 + ", " + p3 + ")";
+  }
+
+  public Shape toShapeFX(){
+    javafx.scene.shape.Polygon t = new javafx.scene.shape.Polygon();
+    t.getPoints().addAll(p1.getX(), p1.getY(),
+            p2.getX(), p2.getY(),
+            p3.getX(), p3.getY());
+    t.setFill(col);
+    return t;
   }
 
   /*public boolean pointIsInside(Point2D p){
