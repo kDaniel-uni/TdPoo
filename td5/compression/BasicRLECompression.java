@@ -1,4 +1,5 @@
 package compression;
+import exceptions.*;
 
 public class BasicRLECompression implements ICompression {
 
@@ -8,12 +9,12 @@ public class BasicRLECompression implements ICompression {
         this.flag = flag;
     }
 
-    public String compress(String data){
+    public String compress(String data) throws ExceptionFlagPosition {
         String result = "";
 
         while(data.length() != 0){
             char current = data.charAt(0);
-            if (current == flag) return "Incorrect flag position";
+            if (current == flag) throw new ExceptionFlagPosition("\nFlag at a bad position :\nData compressed : " + result + "\nData uncompressed " + data);
 
             int t = lengthOfSingleLetterPrefix(data);
             int nb = t/9;
