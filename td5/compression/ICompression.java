@@ -1,8 +1,8 @@
 package compression;
 
-import exceptions.ExceptionFlagPosition;
+import exceptions.RLEException;
 
 interface ICompression {
-    String compress(String data) throws ExceptionFlagPosition;
+    String compress(String data) throws RLEException;
     String uncompress(String data);
 }

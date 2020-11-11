@@ -1,14 +1,14 @@
 package test;
 
 import compression.*;
-import exceptions.ExceptionFlagPosition;
+import exceptions.RLEException;
 
 public class TestRLE{
-    public static void main(String[] args) throws ExceptionFlagPosition {
+    public static void main(String[] args) throws RLEException {
         BasicRLECompression basicRLE = new BasicRLECompression('$');
         RLECompression RLE = new RLECompression('$');
 
-        String test = " aaaaaaaa$$bbbbbbxxxxcccbbbbbbbbbbbeeeeepppppppp$";
+        String test = "aaaaaaaabbbbbbxxxxcccbbbbbbbbbbbeeeeepppppppp";
 
         String RLEOut = RLE.compress(test);
         System.out.println(RLEOut);
@@ -16,5 +16,6 @@ public class TestRLE{
 
         String basicRLEOut = basicRLE.compress(test);
         System.out.println(basicRLEOut);
+        System.out.println(basicRLE.uncompress(basicRLEOut));
     }
 }
