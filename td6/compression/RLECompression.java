@@ -1,41 +1,43 @@
 package compression;
-import exceptions.*;
 
-import java.io.IOException;
+import java.io.Reader;
 import java.io.Writer;
 
-public class BasicRLECompression implements ICompression {
+public class RLECompression implements ICompression {
 
     private char flag;
 
-    public BasicRLECompression(char flag){
+    public RLECompression(char flag){
         this.flag = flag;
     }
 
-    public String compress(String data) throws RLEException {
+    public void compress(Reader in, Writer out){
+        String data = in.toString();
         String result = "";
 
-        try
-        {
-            while(data.length() != 0){
-                char current = data.charAt(0);
-                if (current == flag) throw new RLEException("\nFlag at a bad position :\nData compressed : " + result + "\nData uncompressed " + data + "\n");
-
+        while(data.length() != 0) {
+            char current = data.charAt(0);
+            if (current == flag) {
+                result = result + flag + "0";
+                data = data.substring(1);
+            } else {
                 int t = lengthOfSingleLetterPrefix(data);
-                int nb = t/9;
-                for (int i = 0; i <= nb; i++){
-                    if (i != nb) {result = result + current + flag + "9";}
-                    else {result = result + current + flag + (t % 9);}
+                if (t >= 4) {
+                    int nb = t / 9;
+                    for (int i = 0; i <= nb; i++) {
+                        if (i != nb) {
+                            result = result + current + flag + "9";
+                        } else {
+                            result = result + current + flag + (t % 9);
+                        }
+                    }
+                } else {
+                    result = result + data.substring(0, t);
                 }
                 data = data.substring(t);
             }
         }
-        catch (RLEException e)
-        {
-            System.out.println(e.getMessage());
-        }
-
-        return result;
+        //return result;
     }
 
     int lengthOfSingleLetterPrefix(String s){
@@ -47,8 +49,9 @@ public class BasicRLECompression implements ICompression {
 
         return ite;
     }
-    
-    public String uncompress(String data){
+
+    public void uncompress(Reader in, Writer out){
+        String data = in.toString();
         String result = "";
         for (int i = 0; i < data.length()-1; i++){
             if (data.charAt(i+1) == '0' && data.charAt(i) == flag){
@@ -64,7 +67,6 @@ public class BasicRLECompression implements ICompression {
                 i++;
             }
         }
-        return result;
+        //return result;
     }
-
 }

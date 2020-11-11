@@ -8,7 +8,7 @@ public class TestRLE{
         BasicRLECompression basicRLE = new BasicRLECompression('$');
         RLECompression RLE = new RLECompression('$');
 
-        String test = "aaaaaaaabbbbbbxxxxcccbbbbbbbbbbbeeeeepppppppp";
+        String test = "aaaaaaaabbbbbbxxxxccc$bbbbbbbbbbbeeeeepppppppp";
 
         String RLEOut = RLE.compress(test);
         System.out.println(RLEOut);
